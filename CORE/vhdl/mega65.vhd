@@ -261,34 +261,34 @@ constant C_MENU_VGA_15KHZHSVS : natural := 25;
 constant C_MENU_VGA_15KHZCS   : natural := 26;
 
 -- Dipswitch A
-constant C_MENU_TAITO_DSWA_0 : natural  := 35;
-constant C_MENU_TAITO_DSWA_1 : natural  := 36;
-constant C_MENU_TAITO_DSWA_2 : natural  := 37;
-constant C_MENU_TAITO_DSWA_3 : natural  := 38;
-constant C_MENU_TAITO_DSWA_4 : natural  := 39;
-constant C_MENU_TAITO_DSWA_5 : natural  := 40;
-constant C_MENU_TAITO_DSWA_6 : natural  := 41;
-constant C_MENU_TAITO_DSWA_7 : natural  := 42;
+constant C_MENU_TAITO_DSWA_0 : natural := 35;
+constant C_MENU_TAITO_DSWA_1 : natural := 36;
+constant C_MENU_TAITO_DSWA_2 : natural := 37;
+constant C_MENU_TAITO_DSWA_3 : natural := 38;
+constant C_MENU_TAITO_DSWA_4 : natural := 39;
+constant C_MENU_TAITO_DSWA_5 : natural := 40;
+constant C_MENU_TAITO_DSWA_6 : natural := 41;
+constant C_MENU_TAITO_DSWA_7 : natural := 42;
 
 -- Dipswitch B
-constant C_MENU_TAITO_DSWB_0 : natural  := 49;
-constant C_MENU_TAITO_DSWB_1 : natural  := 50;
-constant C_MENU_TAITO_DSWB_2 : natural  := 51;
-constant C_MENU_TAITO_DSWB_3 : natural  := 52;
-constant C_MENU_TAITO_DSWB_4 : natural  := 53;
-constant C_MENU_TAITO_DSWB_5 : natural  := 54;
-constant C_MENU_TAITO_DSWB_6 : natural  := 55;
-constant C_MENU_TAITO_DSWB_7 : natural  := 56;
+constant C_MENU_TAITO_DSWB_0 : natural := 48;
+constant C_MENU_TAITO_DSWB_1 : natural := 49;
+constant C_MENU_TAITO_DSWB_2 : natural := 50;
+constant C_MENU_TAITO_DSWB_3 : natural := 51;
+constant C_MENU_TAITO_DSWB_4 : natural := 52;
+constant C_MENU_TAITO_DSWB_5 : natural := 53;
+constant C_MENU_TAITO_DSWB_6 : natural := 54;
+constant C_MENU_TAITO_DSWB_7 : natural := 55;
 
--- Dipswitch C 
-constant C_MENU_TAITO_DSWC_0 : natural  := 63;
-constant C_MENU_TAITO_DSWC_1 : natural  := 64;
-constant C_MENU_TAITO_DSWC_2 : natural  := 65;
-constant C_MENU_TAITO_DSWC_3 : natural  := 66;
-constant C_MENU_TAITO_DSWC_4 : natural  := 67;
-constant C_MENU_TAITO_DSWC_5 : natural  := 68;
-constant C_MENU_TAITO_DSWC_6 : natural  := 69;
-constant C_MENU_TAITO_DSWC_7 : natural  := 70;
+-- Dipswitch C
+constant C_MENU_TAITO_DSWC_0 : natural := 61;
+constant C_MENU_TAITO_DSWC_1 : natural := 62;
+constant C_MENU_TAITO_DSWC_2 : natural := 63;
+constant C_MENU_TAITO_DSWC_3 : natural := 64;
+constant C_MENU_TAITO_DSWC_4 : natural := 65;
+constant C_MENU_TAITO_DSWC_5 : natural := 66;
+constant C_MENU_TAITO_DSWC_6 : natural := 67;
+constant C_MENU_TAITO_DSWC_7 : natural := 68;
 
 signal old_clk      : std_logic;
 signal ce_vid       : std_logic;

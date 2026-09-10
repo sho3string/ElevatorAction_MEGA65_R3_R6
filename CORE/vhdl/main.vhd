@@ -136,7 +136,9 @@ constant m65_p             : integer := 41; --Pause button
 constant m65_s             : integer := 13; --Service 1
 constant m65_help          : integer := 67; --Help key
 
--- Bombtrigger
+constant C_MENU_SECOND_FIRE   : natural := 74;
+constant C_MENU_POTPOL        : natural := 75;
+
 constant C_MENU_BOMB_TRIG_EN  : natural := 79;
 constant C_MENU_BOMB_TRIG_0   : natural := 80;
 constant C_MENU_BOMB_TRIG_1   : natural := 81;
@@ -149,15 +151,54 @@ constant C_MENU_BOMB_TRIG_7   : natural := 87;
 constant C_MENU_BOMB_TRIG_8   : natural := 88;
 
 
-signal p1_bomb_auto : std_logic;
-signal p2_bomb_auto : std_logic;
-signal trigger_sel  : std_logic_vector(3 downto 0);
+signal p1_bomb_auto   : std_logic;
+signal p2_bomb_auto   : std_logic;
+signal trigger_sel    : std_logic_vector(3 downto 0);
+
+signal pot1_val       : std_logic_vector(7 downto 0);
+signal potxy_sw       : std_logic;
+signal pot_pol_sw     : std_logic;
+signal shoot2_button_n : std_logic;
 
 begin
-  
+
+    potxy_sw   <= osm_control_i(C_MENU_SECOND_FIRE); -- 0 = POTX, 1 = POTY
+    pot_pol_sw <= osm_control_i(C_MENU_POTPOL);      -- 1 = active-low POT button, 0 = active-high
     options(0) <= osm_control_i(C_MENU_OSMPAUSE);
     options(1) <= osm_control_i(C_MENU_OSMDIM);
     flip_screen <= osm_control_i(C_MENU_FLIP);
+    
+    
+    second_button_proc : process(all)
+    begin
+       -- Select which MEGA65 POT line carries button 2.
+       -- 0 = POTX
+       -- 1 = POTY
+       if potxy_sw = '0' then
+          pot1_val <= pot1_x_i;
+       else
+          pot1_val <= pot1_y_i;
+       end if;
+    
+       -- Generate an ACTIVE-LOW second fire signal.
+       if pot_pol_sw = '1' then
+          -- Active-low POT button
+          if unsigned(pot1_val) < unsigned'(x"80") then
+             shoot2_button_n <= '0';
+          else
+             shoot2_button_n <= '1';
+          end if;
+    
+       else
+          -- Active-high POT button
+          if unsigned(pot1_val) >= unsigned'(x"80") then
+             shoot2_button_n <= '0';
+          else
+             shoot2_button_n <= '1';
+          end if;
+       end if;
+    
+    end process;
     
     trigger_sel <="0000" when osm_control_i(C_MENU_BOMB_TRIG_0) = '1' else
                   "0001" when osm_control_i(C_MENU_BOMB_TRIG_1) = '1' else
@@ -213,7 +254,7 @@ begin
         m_down          => joy_1_down_n_i and keyboard_n(m65_vert_crsr),
         m_up            => joy_1_up_n_i and keyboard_n(m65_up_crsr),
         m_shoot         => joy_1_fire_n_i and keyboard_n(m65_z),
-        m_shoot2        => keyboard_n(m65_x) and p1_bomb_auto,
+        m_shoot2        => keyboard_n(m65_x) and p1_bomb_auto and shoot2_button_n,
         m_coinb         => keyboard_n(m65_6),
         m_start2p       => keyboard_n(m65_2),
         DIP1            => dsw_a_i,
