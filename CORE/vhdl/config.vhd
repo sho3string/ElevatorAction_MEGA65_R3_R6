@@ -327,7 +327,7 @@ constant OPTM_SIZE         : natural := 93;  -- amount of items including empty 
 -- Net size of the Options menu on the screen in characters (excluding the frame, which is hardcoded to two characters)
 -- Without submenus: Use OPTM_SIZE as height, otherwise count how large the actually visible main menu is.
 constant OPTM_DX           : natural := 23;
-constant OPTM_DY           : natural := 24;
+constant OPTM_DY           : natural := 25;
 
 constant OPTM_ITEMS        : string :=
    " Elevator Action\n"     &
@@ -402,11 +402,11 @@ constant OPTM_ITEMS        : string :=
    "\n"                     &
    " Back to main menu\n"   &
    "\n"                     &
-   " Misc Settings\n"       &
+   " Jump input settings\n" &
    "\n"                     &
    " Jump: POTX|POTY\n"     &
    " Jump: Polarity\n"      &
-   " Auto jump\n"           &
+   " Jump: Fire 1 Timer\n"  &
    " Jump menu\n"           &
    "\n"                     &
    " Disable timer\n"       &
