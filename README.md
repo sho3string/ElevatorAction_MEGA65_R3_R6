@@ -29,6 +29,9 @@ How to install the core
 
 1. **Download ROM**: Download the Elevator Action MAME ROM ZIP file from the internet.
    Search for the Elevator Action bootleg rom ( elevatorb ).
+
+   Ensure that the set you're using has the following files or the conversion will fail.  
+   <img width="940" height="597" alt="{64323443-3BAE-4E3A-AAD8-73E0F66903E0}" src="https://github.com/user-attachments/assets/7c4582c5-1615-44c1-8a06-7f35b463a807" />
  
 3. **Download the batch or shell script**:
    a. [Link](https://github.com/sho3string/ElevatorActionMEGA65/blob/master/ElevatorAction_rom_installer.bat) ( For Windows  )
@@ -43,14 +46,19 @@ How to install the core
     `ElevatorAction_rom_installer.bat`  
        
    For Unix/Linux/MacOS  
-   `./ElevatorAction_rom_installer.sh` 
+   `./ElevatorAction_rom_installer.sh`
 
-5. **Copy the ROMs to your MEGA65 SD card**: Copy the files with your generated ROMs tothe MEGA65 SD card. You can use either the bottom SD card tray
+   Example output using the bash script  
+   <img width="537" height="328" alt="image" src="https://github.com/user-attachments/assets/7728277f-1f2e-473f-aac4-9c9534d4642b" />
+
+6. **Copy the ROMs to your MEGA65 SD card**: Copy the files with your generated ROMs tothe MEGA65 SD card. You can use either the bottom SD card tray
 of the MEGA65 or the tray at the backside of the computer (the latter has precedence over the first).
    '**maincpu.rom, bankedcpu.rom, soundcpu.rom, video.rom, layer.rom and eacfg**' need to be in the folder `arcade/elevator` on the SD card or the game will not run.
 
+   Ensure hat the generated rom files have the correct file sizes  
+   <img width="529" height="96" alt="image" src="https://github.com/user-attachments/assets/c0d41fe4-bf1d-444c-8982-0d4b45363c5c" />
 
-6. **Setting up dip switches**
+8. **Setting up dip switches**
 
    Enter the Game Setup by pressing the 'HELP' key, set the individual dip switches for that version in the dip section. There are three dipswitch settings.
 
