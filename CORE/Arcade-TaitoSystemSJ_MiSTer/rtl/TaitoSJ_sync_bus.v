@@ -81,7 +81,14 @@ end
 wire syncHM=(|PH[4:3])|!HPIX[3];
 wire [3:0] U26_Q;
 
-always @(posedge syncHM) SB_HM<=HPIX[8:4];
+reg syncHM_d;
+
+always @(posedge clkm_48MHZ) begin
+    syncHM_d <= syncHM;
+
+    if (syncHM && !syncHM_d)
+        SB_HM <= HPIX[8:4];
+end
 
 ls139x U26A(
 	.A({!SB_HM[4],SB_HM[3]}),
