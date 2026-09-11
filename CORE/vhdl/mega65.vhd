@@ -402,6 +402,9 @@ begin
    video_ce_o       <= ce_vid;
    video_ce_ovl_o   <= video_ce_ovl;
    
+   main_power_led_o     <= '1';
+   main_power_led_col_o <= x"0000FF" when main_reset_m2m_i else x"00FF00";
+   
    dsw_a_i <= main_osm_control_i(C_MENU_TAITO_DSWA_7) &
               main_osm_control_i(C_MENU_TAITO_DSWA_6) &
               main_osm_control_i(C_MENU_TAITO_DSWA_5) &
