@@ -402,7 +402,7 @@ constant OPTM_ITEMS        : string :=
    "\n"                     &
    " Back to main menu\n"   &
    "\n"                     &
-   " Jump input settings\n" &
+   " Jump Input Settings\n" &
    "\n"                     &
    " Jump: POTX|POTY\n"     &
    " Jump: Polarity\n"      &
