@@ -76,7 +76,7 @@ type WHS_RECORD_ARRAY_TYPE is array (0 to WHS_RECORDS - 1) of WHS_RECORD_TYPE;
 
 constant SCR_WELCOME : string :=
 
-   "Elevator Action V0.5.0 (beta)\n" &
+   "Elevator Action V0.5.1 (beta)\n" &
    "-----------------------------\n" &
    "\n" &
    "MiSTer port by Muse 2024-2026\n\n" &
